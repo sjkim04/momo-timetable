@@ -49,7 +49,7 @@ title: Update Spreadsheet
              header: true
              complete: function (results) {
                            var data = results.data();
-                           console.log(data);
+                           $("#table_info").append("Data extracted. The data is:\n" + data);
                            // showInfo(data);
     });
 
