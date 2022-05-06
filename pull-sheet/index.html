@@ -7,7 +7,7 @@ title: Update Spreadsheet
 <script type="text/javascript" src="https://contrafabulists-toolbox.github.io/master/javascript/jquery-latest.min.js"></script>
 <script type="text/javascript" src="https://contrafabulists-toolbox.github.io/master/javascript/utility.js"></script>
 <script type="text/javascript" src="https://contrafabulists-toolbox.github.io/master/javascript/cookies.js"></script>
-<script type="text/javascript" src="https://contrafabulists-toolbox.github.io/master/javascript/tabletop.js"></script>
+<script type="text/javascript" src="https://unpkg.com/papaparse@5.3.2/papaparse.min.js"></script>
 <script type="text/javascript" src="https://contrafabulists-toolbox.github.io/master/javascript/js-yaml.min.js"></script>
 <script type="text/javascript" src="https://contrafabulists-toolbox.github.io/master/javascript/github.js"></script>
 
@@ -41,10 +41,13 @@ title: Update Spreadsheet
     $oAuthToken = Cookies.get("token");
 
     $(document).ready( function() {
-      Tabletop.init( { callback: showInfo,
+/**      Tabletop.init( { callback: showInfo,
                        debug: true,
                        key: $key,
-                       wanted: [ $resource ] } );
+                       wanted: [ $resource ] } ); **/
+         Papa.parse($key, {
+             header: true
+             complete: showInfo()
     });
 
     console.log($resource);
