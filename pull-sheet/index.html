@@ -45,7 +45,7 @@ title: Update Spreadsheet
                        debug: true,
                        key: $key,
                        wanted: [ $resource ] } ); **/
-         Papa.parse("https://docs.google.com/spreadsheets/d/e/"+id+"/pub?gid=0&single=true&output=csv", {
+         Papa.parse("https://docs.google.com/spreadsheets/d/e/"+$key+"/pub?gid=0&single=true&output=csv", {
              header: true
              complete: function (results) {
                            var data = results.data();
