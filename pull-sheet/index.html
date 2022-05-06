@@ -47,12 +47,15 @@ title: Update Spreadsheet
                        wanted: [ $resource ] } ); **/
          Papa.parse($key, {
              header: true
-             complete: showInfo()
+             complete: function (results) {
+                           var data = results.data();
+                           console.log(data);
+                           // showInfo(data);
     });
 
     console.log($resource);
 
-    function showInfo(data, tabletop) {
+    function showInfo(data) {
 
       $products = [];
 
