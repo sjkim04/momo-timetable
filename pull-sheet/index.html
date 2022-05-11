@@ -51,7 +51,7 @@ title: Update Spreadsheet
              header: true
              complete: function (results) {
                            var data = results.data();
-                           progresstext.val(progresstext.val + "Data extracted. The data is:\n" + data);
+                           progresstext.val(progresstext.val() + "Data extracted. The data is:\n" + data);
                            // showInfo(data);
     });
 
@@ -64,7 +64,7 @@ title: Update Spreadsheet
       $("#table_info").text("We found the tables " + tabletop.model_names.join(", "));
 
       $.each( tabletop.sheets(), function(i, sheet) {
-        progresstext.val(progresstext.val + "<p>" + sheet.name + " has " + sheet.column_names.join(", ") + "</p>");
+        progresstext.val(progresstext.val() + "<p>" + sheet.name + " has " + sheet.column_names.join(", ") + "</p>");
       });
 
       $product = tabletop.sheets($resource).all();
